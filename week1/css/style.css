@@ -8,7 +8,8 @@ body {
     margin: auto;
 }
 img {
-    max-width: 20%;
+    float:left;
+    max-width: 45%;
     height:auto;
 }
 .logo-background {
