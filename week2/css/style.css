@@ -18,7 +18,9 @@ body {
     background-size: 100px;
     background-color: #fff;
 }
-
+.material-icons {
+  vertical-align: middle;
+}
 .logo-background h1,
 .logo-background h2 {
     margin-left: 120px;
