@@ -2,3 +2,19 @@
     background-color: #f6978e; 
     background-image: linear-gradient( to right, #cd4f07, #f6978e);
 }
+.header {
+    background-color: #cd4f07;
+    font-family: "Ysabeau SC", sans-serif;
+}
+.baskervville-headings {
+  font-family: "Baskerville", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.ysabeau-sc-NavBar {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+}
