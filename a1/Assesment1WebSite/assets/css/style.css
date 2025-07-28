@@ -7,14 +7,15 @@
     font-family: "Ysabeau SC", sans-serif;
 }
 .baskervville-headings {
+  color:#cd4f07;
   font-family: "Baskerville", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
 }
 .ysabeau-sc-NavBar {
   font-family: "Ysabeau SC", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   color: white;
 }
@@ -24,4 +25,10 @@
   'wght' 400,
   'GRAD' 0,
   'opsz' 24
+}
+.ysabeau-sc {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: gray;
 }
