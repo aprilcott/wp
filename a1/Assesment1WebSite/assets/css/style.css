@@ -66,3 +66,6 @@
   font-size: 12px;
   color: black;
 }
+.carouselCaption {
+  --bs-bg-opacity: .5;
+}
