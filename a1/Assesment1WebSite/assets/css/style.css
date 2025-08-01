@@ -73,11 +73,10 @@
   background-color: #cd4f07;
   color:#cd4f07;
 }
-.tableBlue {
-  font-family: "Ysabeau SC", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+.galleryCaption {
   color: #6b5b95;
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
 }
 body {
   display: flex;
