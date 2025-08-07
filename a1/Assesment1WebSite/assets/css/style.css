@@ -42,10 +42,7 @@
   object-fit: cover;
   object-position: 0px -450px;
 }
-.detailButton {
-  background-color: #cd4f07;
-}
-.ysabeau-sc-detail-button {
+.ysabeau-sc-orange-button {
   font-family: "Ysabeau SC", sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -78,12 +75,16 @@
   font-family: "Ysabeau SC", sans-serif;
   font-weight: 500;
 }
+.add-form {
+font-family: "Ysabeau SC", serif;
+font-weight: 400;
+}
+
 body {
   display: flex;
   flex-direction: column;
   background-color: #fff5f8 ;
 }
-
 main {
   flex: 1;
 }
