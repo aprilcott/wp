@@ -5,8 +5,25 @@ const file = document.getElementById('formFile')
     form.addEventListener('submit', event => {
     event.preventDefault()
     event.stopPropagation()
-    if (!file.contains(".png")) {
-      alert("bruh")
+    const submitError = document.getElementById('submit-alert');
+    submitError.innerHTML = '';
+    submitError.style.display = 'none';
+    if (!checkExtension(file)) {
+      submitError.innerHTML = 'Only image files are allowed (JPG, PNG, GIF, WEBP)';
+      submitError.style.display = 'block';
     }
   })
 })
+function checkExtension(file) {
+  if (file.value.endsWith('.png')) {
+    return true;
+  } else if (file.value.endsWith('.jpg')) {
+    return true;
+    } else if (file.value.endsWith('.jpeg')) {
+    return true;
+  } else if (file.value.endsWith('.webp')) {
+    return true;
+  } else if (file.value.endsWith('.gif')) {
+    return true;
+  }
+}

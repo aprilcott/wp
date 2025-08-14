@@ -79,7 +79,10 @@
 font-family: "Ysabeau SC", serif;
 font-weight: 400;
 }
-
+.form-alert {
+  display: none;
+  font-family: "Ysabeau SC", serif;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -87,6 +90,10 @@ body {
 }
 main {
   flex: 1;
+}
+.form-required::after {
+  content: "*";
+  color:#cd4f07;
 }
 footer {
   padding: 1rem;

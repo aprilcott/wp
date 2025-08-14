@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../../modals testing"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "a1"
+	}
+}
