@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <section>
-            <form>
+            <form novalidate class="needs-validation">
                 <div class="form-group add-form">
                     <label>Title*</label>
                         <input type="name" class="form-control" placeholder="Enter Skill Title">
@@ -81,10 +81,12 @@
                         <option value="3">Request</option>
                     </select>
                     <label>Skill Image*</label>
-                    <input type="file" class="form-control" placeholder="No File Chosen">
-                    <div class="invalid-feedback">Example invalid form file feedback</div>
+                        <div>
+                        <input type="file" id="formFile" class="form-control needs-validation" aria-label="file example" required placeholder="No file selected.">
+                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                        </div>
                     </div>
-                <button id="submitAdd" type="submit" class=" mt-2 btn btn-secondary btn-block btn-primary ysabeau-sc-orange-button rounded-pill">
+                <button id="submitAdd" type="submit" id="submit" class=" mt-2 btn btn-secondary btn-block btn-primary ysabeau-sc-orange-button rounded-pill">
                     <label>Submit</label>
                 </button>
             </form>
