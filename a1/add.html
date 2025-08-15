@@ -63,23 +63,23 @@
                         <span class="form-required">
                             <label>Title</label>
                         </span>
-                        <input type="name" class="form-control" placeholder="Enter Skill Title">
+                        <input type="text" class="form-control" placeholder="Enter Skill Title">
                         <span class="form-required">
                             <label>Description</label>
                         </span>
-                        <textarea type="description" class="form-control" rows="5" placeholder="Enter Description"></textarea>
+                        <textarea class="form-control" rows="5" placeholder="Enter Description"></textarea>
                         <span class="form-required">
                             <label>Category</label>
                         </span>
-                    <input type="category" class="form-control" placeholder="category">
+                    <input type="text" class="form-control" placeholder="category">
                     <span class="form-required">
                         <label>Rate Per Hour ($)</label>
                     </span>
-                        <input type="name" class="form-control" placeholder="Enter Rate Per Hour">
+                        <input type="text" class="form-control" placeholder="Enter Rate Per Hour">
                     <span class="form-required">
                         <label>Level</label>
                     </span>
-                    <select class="form-control" placeholder="Level*">
+                    <select class="form-control">
                         <option selected>Please Select</option>
                         <option value="1">Beginner</option>
                         <option value="2">Intermediate</option>
@@ -89,13 +89,12 @@
                         <label>Skill Image</label>
                     </span>
                         <div>
-                        <input type="file" id="formFile" class="form-control needs-validation" aria-label="file example" required placeholder="No file selected.">
-                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                        <input type="file" id="formFile" class="form-control needs-validation" required>
                         </div>
                     </div>
                     <div id="submit-alert" class="alert alert-danger form-alert mt-2"></div>
-                <button id="submitAdd" type="submit" id="submit" class=" mt-2 btn btn-secondary btn-block btn-primary ysabeau-sc-orange-button rounded-pill">
-                    <label>Submit</label>
+                <button type="submit" id="submit" class=" mt-2 btn btn-secondary btn-block btn-primary ysabeau-sc-orange-button rounded-pill">
+                    Submit
                 </button>
             </form>
         </section>

@@ -7,11 +7,17 @@
     font-family: "Ysabeau SC", sans-serif;
 }
 .baskervville-headings {
+  margin-top: 20px;
   color:#cd4f07;
   font-family: "Baskerville", serif;
-  font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+}
+.ysabeau-sc- {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color:white;
 }
 .ysabeau-sc-Footer {
   font-family: "Ysabeau SC", sans-serif;
@@ -39,17 +45,25 @@
   font-family: "Ysabeau SC", sans-serif;
   font-weight: 600;
   font-style: normal;
-  color: #fff5f8;
+  color:white;
+}
+
+.ysabeau-sc-sub-heading {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color:black;
 }
 .carousel-item {
-  max-height: 400px;
-  overflow: hidden;
+  max-height: 450px
 }
-.carousel-item img {
+.carousel-item img{
+  bottom: 500px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0px -450px;
+  top: -450px;
+}
+.gallery-image:hover {
+  transform: translateY(-5px);
 }
 .ysabeau-sc-orange-button {
   font-family: "Ysabeau SC", sans-serif;
@@ -112,6 +126,14 @@ table {
   font-weight: 500;
   color: #333333;
 }
-td:first-child {
+td:first-child a {
   color: #6b5b95;
+  text-decoration: none;
+}
+td:first-child a:hover {
+  color:#cd4f07;
+  text-decoration: underline;
+}
+.modal-body:hover {
+  transform: translateY(-5px);
 }
