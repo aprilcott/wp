@@ -27,3 +27,12 @@ function checkExtension(file) {
     return true;
   }
 }
+document.addEventListener('DOMContentLoaded', Function())
+  const galleryImages = document.querySelectorAll('.gallery-image')
+  const modalImage = document.getElementById('modal-img')
+  galleryImages.forEach(img => {
+    img.addEventListener('click', function() {
+      modalImage.src = this.src
+    })
+  })
+
