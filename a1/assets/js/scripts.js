@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', Function())
   galleryImages.forEach(img => {
     img.addEventListener('click', function() {
       modalImage.src = this.src
+      modalImage.alt = this.alt
     })
   })
 
