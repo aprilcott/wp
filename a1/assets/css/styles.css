@@ -52,7 +52,7 @@
   font-family: "Ysabeau SC", sans-serif;
   font-weight: 600;
   font-style: normal;
-  color:black;
+  color: #333333;
 }
 .carousel-item {
   max-height: 450px
@@ -66,6 +66,9 @@
   top: -450px;
 }
 .gallery-image:hover {
+  transform: translateY(-5px);
+}
+.view-detail:hover {
   transform: translateY(-5px);
 }
 .ysabeau-sc-orange-button {
@@ -139,4 +142,18 @@ td:first-child a:hover {
 }
 .modal-body:hover {
   transform: translateY(-5px);
+}
+.navbar-toggler {
+  border: none;
+  color:#333333
+}
+.search-btn:hover {
+  background-color: gray;
+  color:#fff5f8
+}
+.search-btn {
+  background-color: #fff5f8;
+}
+.ysabeau-sc-orange-button:hover {
+  background-color: #6b5b95;
 }
