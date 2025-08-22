@@ -2,18 +2,20 @@ const forms = document.querySelectorAll('.needs-validation')
 const file = document.getElementById('formFile')
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-    event.preventDefault()
-    event.stopPropagation()
-    const submitError = document.getElementById('submit-alert');
-    submitError.innerHTML = '';
-    submitError.style.display = 'none';
-    if (!checkExtension(file)) {
-      submitError.innerHTML = 'Only image files are allowed (JPG, PNG, GIF, WEBP)';
-      submitError.style.display = 'block';
-    }
-  })
-})
+    form.addEventListener('submit', 
+    function(event) {
+      const submitError = document.getElementById('submit-alert');
+      submitError.innerHTML = '';
+      submitError.style.display = 'none';
+      if (!checkExtension(file)) {
+        event.preventDefault();
+        submitError.innerHTML = 'Only image files are allowed (JPG, JPEG, PNG, GIF, WEBP)';
+        submitError.style.display = 'block';
+        return false;
+      }
+      // If valid, form will submit normally
+    });
+  });
 function checkExtension(file) {
   if (file.value.endsWith('.png')) {
     return true;
