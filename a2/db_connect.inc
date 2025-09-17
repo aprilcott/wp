@@ -1,5 +1,5 @@
 <?php
-/*
+
 $server_name = $_SERVER['SERVER_NAME'] ?? 'localhost';
 if ($_SERVER['SERVER_NAME'] == 'localhost') {
     $servername = "localhost";
@@ -12,7 +12,6 @@ if ($_SERVER['SERVER_NAME'] == 'localhost') {
   $password = "8Ba1l!<3";
  $dbname = "s4176756";
 }
- */
 
 $servername = "localhost";
     $username = "root";
