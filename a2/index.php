@@ -1,56 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <meta name="author" content="Test">
-    <link rel="icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-</head>
+<html>
+    <?php $pageTitle = "Home";
+    include 'header.inc';
+    include("db_connect.inc"); ?>
 <body>
-        <div class="header">
-            <nav class="navbar navbar-expand-lg py-0">
-                <div class="container-fluid">
-                <a class="navbar-brand me-4" href="index.html">
-                    <img class="img-fluid" width="70" src="assets/images/SkillSwap_logo.png" alt="skill Swap logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="collapse navbar-collapse nav-item" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 text-md-center">
-                <li class="nav-item">
-                    <a class="nav-link ysabeau-sc-NavBar me-3" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ysabeau-sc-NavBar me-3" href="skills.html"> All Skills </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ysabeau-sc-NavBar me-3" href="gallery.html"> Gallery </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link ysabeau-sc-NavBar me-3" href="add.html"> Add Skills </a>
-                </li>
-            </ul>
-            <form class="ms-auto d-flex p-md-3" role="search">
-                <div class="input-group">
-                <button type="submit" class="btn search-btn text-gray material-symbols-outlined">
-                        search
-                </button>
-                <input class="form-control bg-light ysabeau-sc-NavBar" type="search" placeholder="Search skills..." aria-label="Search">
-                </div>
-            </form>
-            </div>
-            </div>
-        </nav>
-        </div>
+    <?php include 'nav.inc'; ?>
+
         <main class="section-container">
             <div class="container-xl">
            <div class="row gy-3">
@@ -147,14 +103,7 @@
             </div>
             </div>
         </main>
-<div class="footerGrad mt-5 py-5 container-fluid">
-    <hr class="footerHR rounded-pill"/>
-    <footer class="card-footer">
-        <div class="ysabeau-sc-Footer text-end">
-        <p class="mb-0">&copy; 2025 April Alice Benson <span class="footer-brand">SkillSwap</span></p>
-        </div>
-    </footer>
-</div>
+<?php include 'footer.inc'; ?>
 <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script async src="assets/js/scripts.js"></script>
 </body>
