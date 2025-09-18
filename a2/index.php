@@ -56,50 +56,29 @@
             </div>
             </div>
             <div class="row mt-5">
-                <div class="view-detail col-12 col-lg-3">
-                    <div class="ysabeau-sc-detail-heading">
-                        Intro to PHP & MySQL
-                    </div>
-                    <div class="ysabeau-sc-detail-sub-heading">
-                        Rate: $55.00/HR
-                    </div>
-                    <button class="mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button">
-                        View Details
-                    </button>
-            </div>
-            <div class="view-detail col-12 col-lg-3">
-                    <div class="ysabeau-sc-detail-heading">
-                        Intermediate Fingerstyle
-                    </div>
-                    <div class="ysabeau-sc-detail-sub-heading">
-                        Rate: $45.00/HR
-                    </div>
-                    <button class="mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button">
-                        View Details
-                    </button>
-            </div>
-            <div class="view-detail col-12 col-lg-3">
-                    <div class="ysabeau-sc-detail-heading">
-                        Artisan Bread Baking
-                    </div>
-                    <div class="ysabeau-sc-detail-sub-heading">
-                        Rate: $25.00/HR
-                    </div>
-                    <button class="mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button">
-                        View Details
-                    </button>
-            </div>
-            <div class="view-detail col-12 col-lg-3">
-                    <div class="ysabeau-sc-detail-heading">
-                        French Pastry Making
-                    </div>
-                    <div class="ysabeau-sc-detail-sub-heading">
-                        Rate: $50.00/HR
-                    </div>
-                    <button class="mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button">
-                        View Details
-                    </button>
-            </div>
+                <?php
+                                $query = "SELECT COUNT(*) as total FROM skills";
+                                $result = mysqli_query($conn, $query);
+                                $row =mysqli_fetch_assoc($result);
+                                $count = $row["total"];
+                                $countEnd = $count - 4;
+                                 for ($count; $count > $countEnd; $count--) {
+                                    $query = "SELECT * FROM skills WHERE skillID = $count";
+                                    $result = mysqli_query($conn, $query);
+                                    $row = mysqli_fetch_assoc($result);
+                                    echo '<div class="view-detail col-12 col-lg-3">';
+                                    echo '<div class="ysabeau-sc-detail-heading">';
+                                    echo "{$row["skillTitle"]}";
+                                    echo "</div>";
+                                    echo ' <div class="ysabeau-sc-detail-sub-heading">';
+                                    echo "Rate: \${$row['skillRate']}";
+                                    echo "</div>";
+                                    echo "<button class='mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button'>";
+                                    echo "View Details";
+                                    echo "</button>";
+                                    echo "</div>";
+                                 }
+                            ?>
             </div>
             </div>
         </main>
