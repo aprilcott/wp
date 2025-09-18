@@ -1,6 +1,5 @@
 <?php
 
-if (is_null($_SERVER)) {
 if ($_SERVER['SERVER_NAME'] == 'https://titan.csit.rmit.edu.au/~s4176756/') {
     $servername = "talsprddb02.int.its.rmit.edu.au";
    $username = "s4176756";
@@ -8,12 +7,6 @@ if ($_SERVER['SERVER_NAME'] == 'https://titan.csit.rmit.edu.au/~s4176756/') {
  $dbname = "s4176756";
 } else {
     $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "s4176756"; 
-}
-} else {
-        $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "s4176756"; 
