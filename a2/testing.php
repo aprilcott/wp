@@ -6,41 +6,47 @@
     include("db_connect.inc"); ?>
 <body>
 <?php include 'nav.inc'; ?>
-    <main class="section-container">
-            <div class="row gx-3">
+<div class="container-xl">
+              <div id="skillCarousel" class="carousel slide" data-bs-ride="carousel">
                                 <?php
                                 $query = "SELECT COUNT(*) as total FROM skills";
                                 $result = mysqli_query($conn, $query);
                                 $row =mysqli_fetch_assoc($result);
                                 $count = $row["total"];
-                                 for ($i = 1; $i <= $count; $i++) {
-                                    $query = "SELECT * FROM skills WHERE skillID = $i";
+                                $countEnd = $count - 4;
+                                 for ($count; $count >= $countEnd; $count--) {
+                                    $query = "SELECT * FROM skills WHERE skillID = $count";
                                     $result = mysqli_query($conn, $query);
                                     $row =mysqli_fetch_assoc($result);
-                                    echo '<div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">';
-                                    echo '<img class="img-fluid gallery-image rounded-top" src="assets/images/skills/';
-                                    echo "{$row["skillImage"]}\"";
-                                    echo  'alt="guitar Beginner">';
-                                    echo '<p class="text-center  mt-3 galleryCaption">Beginner Guitar Lessons</p>';
-                                    echo '</div>';
                                     $query = "SELECT * FROM skills WHERE skillID = $count";
                                     $result = mysqli_query($conn, $query);
                                     $row = mysqli_fetch_assoc($result);
+                                    echo '<div class="carousel-inner">';
+                                    if ($count - $countEnd = 4) {
+                                    echo '<div class="carousel-item active">';
+                                    } else {
+                                      echo '<div class="carousel-item">';
+                                    }
+                                    echo '<img src="assets/images/skills/';
+                                    echo $row["skillImage"];
+                                    echo '" class="img-fluid" alt="guitar">';
+                                    echo '<div class="carousel-caption bg-dark bg-opacity-50">
+                                          <p class="ysabeau-sc-Carousel">Beginner Guitar Lessons</p>
+                                          </div>
+                                          </div>';
                                  }
                             ?>
-                </div>
-                <div class="modal fade" id="blank-modal" tabindex="-1"   aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-md">
-    <div class="modal-content">
-      <div class="modal-body">
-        <img id ="modal-img" src="" alt="guitar Beginner" class="img-fluid">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div> 
-    </div>
-  </div>
-</div>
+                            </div>
+                             <button class="carousel-control-prev" type="button" data-bs-target="#skillCarousel" data-bs-slide="prev">
+                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#skillCarousel" data-bs-slide="next">
+                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                    </div>
 
 <?php include 'footer.inc'; ?>
 <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
