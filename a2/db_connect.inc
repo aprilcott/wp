@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER['SERVER_NAME'] == 'localhost') {
+if ($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['127.0.0.1:5500']) {
      $servername = "localhost";
     $username = "root";
     $password = "";

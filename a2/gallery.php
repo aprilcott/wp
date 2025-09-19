@@ -16,40 +16,26 @@
                     </div>
                 </div>
                 <div class="row gx-3">
-                    <div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">
-                        <img class="img-fluid gallery-image rounded-top" src="assets/images/skills/1.png" alt="guitar Beginner">
-                        <p class="text-center  mt-3 galleryCaption">Beginner Guitar Lessons</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#blank-modal">
-                        <img class="img-fluid gallery-image rounded-top" src="assets/images/skills/2.png" alt="guitar Intermediate">
-                        <p class="text-center mt-3 galleryCaption">Intermediate FingerStyle</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">
-                        <img class="img-fluid gallery-image rounded-top" src="assets/images/skills/3.png" alt="Baking beginner">
-                        <p class="text-center  mt-3 galleryCaption">Artisan Bread Baking</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">
-                        <img class="img-fluid gallery-image rounded-top" src="assets/images/skills/4.png" alt="Baking Advanced">
-                        <p class="text-center  mt-3 galleryCaption">French Pastry Making</p>
-                    </div>
-                </div>
-                <div class="row gx-3">
-                    <div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">
-                        <img class="img-fluid gallery-image rounded-top" src="assets/images/skills/5.png" alt="Art beginner">
-                        <p class="text-center  mt-3 galleryCaption">Watercolor Basics</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-bs-toggle="modal" data-bs-target="#blank-modal">
-                        <img class="img-fluid gallery-image rounded-top" src="assets/images/skills/6.png" alt="Art advanced">
-                        <p class="text-center mt-3 galleryCaption">Digital Illustration with Procreate</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">
-                        <img class="img-fluid gallery-image rounded-top" src="assets/images/skills/7.png" alt="Meditation beginner">
-                        <p class="text-center mt-3 galleryCaption">Morning Vinyasa Flow</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">
-                        <img class="img-fluid gallery-image rounded-top" src="assets/images/skills/8.png" alt="SQL beginner">
-                        <p class="text-center  mt-3 galleryCaption">Intro to PHP & MySQL</p>
-                    </div>
+                                                    <?php
+                                $query = "SELECT COUNT(*) as total FROM skills";
+                                $result = mysqli_query($conn, $query);
+                                $row =mysqli_fetch_assoc($result);
+                                $count = $row["total"];
+                                 for ($i = 1; $i <= $count; $i++) {
+                                    $query = "SELECT * FROM skills WHERE skillID = $i";
+                                    $result = mysqli_query($conn, $query);
+                                    $row =mysqli_fetch_assoc($result);
+                                    echo '<div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">';
+                                    echo '<img class="img-fluid gallery-image rounded-top" src="assets/images/skills/';
+                                    echo "{$row["skillImage"]}\"";
+                                    echo  'alt="guitar Beginner">';
+                                    echo '<p class="text-center  mt-3 galleryCaption">Beginner Guitar Lessons</p>';
+                                    echo '</div>';
+                                    $query = "SELECT * FROM skills WHERE skillID = $count";
+                                    $result = mysqli_query($conn, $query);
+                                    $row = mysqli_fetch_assoc($result);
+                                 }
+                            ?>
                 </div>
             </div>
         </main>
