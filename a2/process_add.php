@@ -41,7 +41,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssssds", $title, $description, $category, $rate, $level, $newImageName);
 $stmt->execute();
 if ($stmt->affected_rows > 0) {
-    $newImagePath = 'assets/images/skills/' . $newImageName;
+    $newImagePath = '/home/sh6/S4176756/public_html/wp/a2/assets/images/skills/' . $newImageName;
     if (move_uploaded_file($_FILES['image']['tmp_name'], $newImagePath)) {
         echo "Image uploaded and database updated successfully.";
     } else {
