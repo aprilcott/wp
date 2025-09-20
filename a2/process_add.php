@@ -40,8 +40,9 @@ $sql = "INSERT INTO skills (title, description, category, rate_per_hr, level, im
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssssds", $title, $description, $category, $rate, $level, $newImageName);
 $stmt->execute();
+$uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/wp/a2/assets/images/skills/';
 if ($stmt->affected_rows > 0) {
-    $newImagePath = '/home/sh6/S4176756/public_html/wp/a2/assets/images/skills/' . $newImageName;
+    $newImagePath = $uploadDirectory . $newImageName;
     if (move_uploaded_file($_FILES['image']['tmp_name'], $newImagePath)) {
         echo "Image uploaded and database updated successfully.";
     } else {
