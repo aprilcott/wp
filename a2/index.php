@@ -59,8 +59,6 @@
                     </button>
                     </div>
                     </div>
-                                </div>
-                                </div>
             <div class="row mt-5">
                 <?php
                                 $query = "SELECT COUNT(*) as total FROM skills";
