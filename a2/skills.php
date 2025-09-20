@@ -33,15 +33,15 @@
                         <tbody>
                             <?php
                             for ($x = 1; $x <= 10; $x++) {
-                                $query = "SELECT * FROM skills WHERE skillID = $x";
+                                $query = "SELECT * FROM skills WHERE skill_id = $x";
                                 $result = mysqli_query($conn, $query);
                                 $row = mysqli_fetch_assoc($result);
                                 if ($row) {
                                     echo "<tr>";
-                                    echo "<td><a href=\"testing.php\">{$row['skillTitle']}</a></td>";
-                                    echo "<td>{$row['skillCategory']}</td>";
-                                    echo "<td>{$row['skillLevel']}</td>";
-                                    echo "<td>{$row['skillRate']}</td>";
+                                    echo "<td><a href=\"testing.php\">{$row['title']}</a></td>";
+                                    echo "<td>{$row['category']}</td>";
+                                    echo "<td>{$row['level']}</td>";
+                                    echo "<td>{$row['rate_per_hr']}</td>";
                                     echo "</tr>";
                                 }
                             }

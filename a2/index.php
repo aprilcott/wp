@@ -19,33 +19,37 @@
                 </div>
             </div>
             <div id="skillCarousel" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/images/skills/1.png" class="img-fluid" alt="guitar">
-                        <div class="carousel-caption bg-dark bg-opacity-50">
-                            <p class="ysabeau-sc-Carousel">Beginner Guitar Lessons</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/skills/2.png" class="img-fluid" alt="guitar second">
-                        <div class="carousel-caption bg-dark bg-opacity-50">
-                        <p class="ysabeau-sc-Carousel">Intermediate Finger Style</p>
-                        </div>
-                    </div>
-                        <div class="carousel-item">
-                        <img src="assets/images/skills/3.png" class="img-fluid" alt="Bread Baking">
-                        <div class="carousel-caption bg-dark bg-opacity-50">
-                        <p class="ysabeau-sc-Carousel">Artisinal Bread Baking</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/skills/4.png" class="img-fluid" alt="French Pastry Making">
-                        <div class="carousel-caption bg-dark bg-opacity-50">
-                        <p class="ysabeau-sc-Carousel">French Pastry Making</p>
-                        </div>
-                    </div>
-                    </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#skillCarousel" data-bs-slide="prev">
+                <div class="carousel-inner">
+                                <?php
+                                $query = "SELECT COUNT(*) as total FROM skills";
+                                $result = mysqli_query($conn, $query);
+                                $row =mysqli_fetch_assoc($result);
+                                $count = $row["total"];
+                                $countEnd = $count - 4;
+                                $first = true;
+                                 for ($count; $count > $countEnd; $count--) {
+                                    $query = "SELECT * FROM skills WHERE skill_id = $count";
+                                    $result = mysqli_query($conn, $query);
+                                    $row =mysqli_fetch_assoc($result);
+                                    if ($first) {
+                                    echo '<div class="carousel-item active">';
+                                    $first = false;
+                                    } else {
+                                      echo '<div class="carousel-item">';
+                                    }
+                                    echo '<img src="assets/images/skills/';
+                                    echo $row["image_path"];
+                                    echo '" class="img-fluid" alt="guitar">';
+                                    echo '<div class="carousel-caption bg-dark bg-opacity-50">
+                                          <p class="ysabeau-sc-Carousel">';
+                                          echo $row["title"];
+                                          echo '</p>
+                                          </div>
+                                          </div>';
+                                 }
+                            ?>
+                            </div>
+                             <button class="carousel-control-prev" type="button" data-bs-target="#skillCarousel" data-bs-slide="prev">
                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                     </button>
@@ -53,8 +57,10 @@
                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                     </button>
-            </div>
-            </div>
+                    </div>
+                    </div>
+                                </div>
+                                </div>
             <div class="row mt-5">
                 <?php
                                 $query = "SELECT COUNT(*) as total FROM skills";
@@ -63,15 +69,15 @@
                                 $count = $row["total"];
                                 $countEnd = $count - 4;
                                  for ($count; $count > $countEnd; $count--) {
-                                    $query = "SELECT * FROM skills WHERE skillID = $count";
+                                    $query = "SELECT * FROM skills WHERE skill_id = $count";
                                     $result = mysqli_query($conn, $query);
                                     $row = mysqli_fetch_assoc($result);
                                     echo '<div class="view-detail col-12 col-lg-3">';
                                     echo '<div class="ysabeau-sc-detail-heading">';
-                                    echo "{$row["skillTitle"]}";
+                                    echo "{$row["title"]}";
                                     echo "</div>";
                                     echo ' <div class="ysabeau-sc-detail-sub-heading">';
-                                    echo "Rate: \${$row['skillRate']}";
+                                    echo "Rate: \${$row['rate_per_hr']}";
                                     echo "</div>";
                                     echo "<button class='mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button'>";
                                     echo "View Details";

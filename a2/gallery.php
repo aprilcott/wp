@@ -22,18 +22,15 @@
                                 $row =mysqli_fetch_assoc($result);
                                 $count = $row["total"];
                                  for ($i = 1; $i <= $count; $i++) {
-                                    $query = "SELECT * FROM skills WHERE skillID = $i";
+                                    $query = "SELECT * FROM skills WHERE skill_id = $i";
                                     $result = mysqli_query($conn, $query);
                                     $row =mysqli_fetch_assoc($result);
                                     echo '<div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">';
                                     echo '<img class="img-fluid gallery-image rounded-top" src="assets/images/skills/';
-                                    echo "{$row["skillImage"]}\"";
-                                    echo  'alt="guitar Beginner">';
-                                    echo '<p class="text-center  mt-3 galleryCaption">Beginner Guitar Lessons</p>';
+                                    echo "{$row["image_path"]}\"";
+                                    echo  'alt=";'; echo $row['title']; echo '">';
+                                    echo '<p class="text-center  mt-3 galleryCaption">'; echo $row['title']; echo '</p>';
                                     echo '</div>';
-                                    $query = "SELECT * FROM skills WHERE skillID = $count";
-                                    $result = mysqli_query($conn, $query);
-                                    $row = mysqli_fetch_assoc($result);
                                  }
                             ?>
                 </div>
