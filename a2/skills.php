@@ -38,10 +38,10 @@
                                 $row = mysqli_fetch_assoc($result);
                                 if ($row) {
                                     echo "<tr>";
-                                    echo "<td><a href=\"details.php?id='". urlencode($row['skillID']) . "'\">{$row['skillTitle']}</a></td>";
-                                    echo "<td>{$row['skillCategory']}</td>";
-                                    echo "<td>{$row['skillLevel']}</td>";
-                                    echo "<td>{$row['skillRate']}</td>";
+                                    echo "<td><a href=\"details.php?id='". urlencode($row['skill_id']) . "'\">{$row['title']}</a></td>";
+                                    echo "<td>{$row['category']}</td>";
+                                    echo "<td>{$row['level']}</td>";
+                                    echo "<td>{$row['rate_per_hr']}</td>";
                                     echo "</tr>";
                                 }
                             }

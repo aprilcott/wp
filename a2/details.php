@@ -16,7 +16,7 @@
     $query = "SELECT * FROM skills WHERE skillID = $id";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
-    echo $row['skillRate'];
+    echo $row['rate_per_hr'];
         ?>
 <?php include 'footer.inc'; ?>
 <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

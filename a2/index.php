@@ -77,7 +77,7 @@
                                     echo ' <div class="ysabeau-sc-detail-sub-heading">';
                                     echo "Rate: \${$row['rate_per_hr']}";
                                     echo "</div>";
-                                    echo "<a class='mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button' href=\"details.php?id='". urlencode($row['skillID']) . "'\">View Details </a>";
+                                    echo "<a class='mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button' href=\"details.php?id='". urlencode($row['skill_id']) . "'\">View Details </a>";
                                     echo "</div>";
                                  }
                             ?>
