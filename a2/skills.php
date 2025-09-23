@@ -38,7 +38,7 @@
                                 $row = mysqli_fetch_assoc($result);
                                 if ($row) {
                                     echo "<tr>";
-                                    echo "<td><a href=\"testing.php\">{$row['skillTitle']}</a></td>";
+                                    echo "<td><a href=\"details.php?id='". urlencode($row['skillID']) . "'\">{$row['skillTitle']}</a></td>";
                                     echo "<td>{$row['skillCategory']}</td>";
                                     echo "<td>{$row['skillLevel']}</td>";
                                     echo "<td>{$row['skillRate']}</td>";

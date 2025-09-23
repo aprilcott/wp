@@ -73,9 +73,7 @@
                                     echo ' <div class="ysabeau-sc-detail-sub-heading">';
                                     echo "Rate: \${$row['skillRate']}";
                                     echo "</div>";
-                                    echo "<button class='mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button'>";
-                                    echo "View Details";
-                                    echo "</button>";
+                                    echo "<a class='mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button' href=\"details.php?id='". urlencode($row['skillID']) . "'\">View Details </a>";
                                     echo "</div>";
                                  }
                             ?>
