@@ -32,8 +32,12 @@
                         </thead>
                         <tbody>
                             <?php
-                            for ($x = 1; $x <= 10; $x++) {
-                                $query = "SELECT * FROM skills WHERE skill_id = $x";
+                            $query = "SELECT COUNT(*) as total FROM skills";
+                                $result = mysqli_query($conn, $query);
+                                $row =mysqli_fetch_assoc($result);
+                                $count = $row["total"];
+                                 for ($i = 1; $i <= $count; $i++) {
+                                $query = "SELECT * FROM skills WHERE skill_id = $i";
                                 $result = mysqli_query($conn, $query);
                                 $row = mysqli_fetch_assoc($result);
                                 if ($row) {
