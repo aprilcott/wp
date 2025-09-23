@@ -13,7 +13,7 @@
         <?php
         $id = intval($_GET['id']);
         echo $id;
-    $query = "SELECT * FROM skills WHERE skillID = $id";
+    $query = "SELECT * FROM skills WHERE skill_id = $id";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     echo $row['rate_per_hr'];
