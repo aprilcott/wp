@@ -21,12 +21,10 @@ $uploadDirectory =  '/home/sh6/S4176756/public_html/wp/a2/assets/images/skills/'
 if ($stmt->affected_rows > 0) {
     $newImagePath = $uploadDirectory . $newImageName;
     if (move_uploaded_file($_FILES['image']['tmp_name'], $newImagePath)) {
-        echo "Image uploaded and database updated successfully.";
+        header('Location: details.php?id='.$sqlImageIndex);
     } else {
-        echo "Failed to upload the image.";
     }
 } else {
-    echo "Failed to insert data into the database.";
 }
 
 $stmt->close();

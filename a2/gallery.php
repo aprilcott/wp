@@ -42,7 +42,7 @@
   <div class="modal-dialog modal-dialog-centered modal-md">
     <div class="modal-content">
       <div class="modal-body">
-        <img id ="modal-img" src="" alt="guitar Beginner" class="img-fluid">
+        <img id ="modal-img" src="" alt="" class="img-fluid">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

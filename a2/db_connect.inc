@@ -1,7 +1,7 @@
 <?php
-    $servername = "talsprddb02.int.its.rmit.edu.au";
-    $username = "s4176756";
-    $password = "8Ba1l!<3";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
     $dbname = "s4176756";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
