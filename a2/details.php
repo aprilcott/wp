@@ -37,7 +37,7 @@ echo '<div class="container-xl">';
                         echo '<span class="ysabeau-sc-detail-heading">Category:</span> ';
                         echo '<span class="ysabeau-sc-detail-sub-heading-details">';
                         echo $row['category'];
-                        echo ':</span> ';
+                        echo '</span> ';
                     echo '</p>';
                 echo '</div>';
             echo '</div>';
