@@ -33,7 +33,7 @@
                         <tbody>
                             <?php
                             for ($x = 1; $x <= 10; $x++) {
-                                $query = "SELECT * FROM skills WHERE skillID = $x";
+                                $query = "SELECT * FROM skills WHERE skill_id = $x";
                                 $result = mysqli_query($conn, $query);
                                 $row = mysqli_fetch_assoc($result);
                                 if ($row) {

@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <section>
-            <form class="needs-validation" action="https://titan.csit.rmit.edu.au/~e54061/wp/request-test.php" method="post" enctype="multipart/form-data">
+            <form class="needs-validation" action="process_add.php" method="post" enctype="multipart/form-data">
                 <div class="form-group add-form">
                         <div class="form-required">
                             <label>Title</label>
@@ -24,7 +24,7 @@
                         <div class="form-required">
                             <label>Description</label>
                         </div>
-                        <textarea class="form-control" rows="5" placeholder="Enter Description" required></textarea>
+                        <textarea name="description" class="form-control" rows="5" placeholder="Enter Description" required></textarea>
                         <div class="form-required">
                             <label>Category</label>
                         </div>
@@ -32,11 +32,11 @@
                     <div class="form-required">
                         <label>Rate Per Hour ($)</label>
                     </div>
-                        <input name="rate p/h" type="number" step="0.05" min="0" class="form-control" placeholder="Enter Rate Per Hour" required>
+                        <input name="rate-p/h" type="number" step="0.05" min="0" class="form-control" placeholder="Enter Rate Per Hour" required>
                     <div class="form-required">
                         <label>Level</label>
                     </div>
-                    <select name="Level" class="form-control" required>
+                    <select name="level" class="form-control" required>
                         <option value="" disabled selected>Please Select</option>
                         <option value="1">Beginner</option>
                         <option value="2">Intermediate</option>
