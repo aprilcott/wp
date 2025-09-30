@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <html>
-    <?php $pageTitle = "Home";
+    <?php $pageTitle = "Details";
     include 'header.inc';
     include("db_connect.inc"); ?>
 <body>
