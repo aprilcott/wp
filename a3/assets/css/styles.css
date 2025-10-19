@@ -1,0 +1,166 @@
+.footerGrad {
+    background-color: #f6978e; 
+    background-image: linear-gradient( to right, #cd4f07, #f6978e);
+}
+.header {
+    background-color: #cd4f07;
+    font-family: "Ysabeau SC", sans-serif;
+}
+.baskervville-headings {
+  margin-top: 20px;
+  color:#cd4f07;
+  font-family: "Baskerville", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.ysabeau-sc- {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color:white;
+}
+.ysabeau-sc-Footer {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color:white;
+}
+.ysabeau-sc-NavBar {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color:white;
+}
+.ysabeau-sc-NavBar:hover {
+  color:#6b5b95
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.ysabeau-sc {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color:white;
+}
+
+.ysabeau-sc-sub-heading {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #333333;
+}
+.carousel-item {
+  max-height: 450px
+}
+.carousel-caption {
+  font-family: "Ysabeau SC", sans-serif;
+}
+.carousel-item img{
+  bottom: 500px;
+  width: 100%;
+  top: -450px;
+}
+.gallery-image:hover {
+  transform: translateY(-5px);
+}
+.view-detail:hover {
+  transform: translateY(-5px);
+}
+.ysabeau-sc-orange-button {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+  background-color: #cd4f07;
+}
+.ysabeau-sc-detail-heading {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  color: #cd4f07;
+}
+.ysabeau-sc-detail-sub-heading {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  color: #333333 ;
+}
+.ysabeau-sc-detail-sub-heading-details {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  color: #333333 ;
+}
+.footerHR {
+  width:5%;
+  height: 5px;
+  margin:auto;
+  background-color: #cd4f07;
+  color:#cd4f07;
+}
+.galleryCaption {
+  color: #6b5b95;
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+}
+.add-form {
+font-family: "Ysabeau SC", serif;
+font-weight: 400;
+}
+.form-alert {
+  display: none;
+  font-family: "Ysabeau SC", serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff5f8 ;
+}
+main {
+  flex: 1;
+}
+.form-required::after {
+  content: "*";
+  color:#cd4f07;
+}
+footer {
+  padding: 1rem;
+}
+table {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+  color: #333333;
+}
+td:first-child a {
+  color: #6b5b95;
+  text-decoration: none;
+}
+td:first-child a:hover {
+  color:#cd4f07;
+  text-decoration: underline;
+}
+.modal-body:hover {
+  transform: translateY(-5px);
+}
+.navbar-toggler {
+  border: none;
+  color:#333333
+}
+.search-btn:hover {
+  background-color: gray;
+  color:#fff5f8
+}
+.search-btn {
+  background-color: #fff5f8;
+}
+.ysabeau-sc-orange-button:hover {
+  background-color: #6b5b95;
+}
