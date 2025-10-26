@@ -10,7 +10,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssss", $name, $email, $password, $bio, $date);
 $stmt->execute();
 if ($stmt->affected_rows > 0) {
-        header('Location: details.php?id='.$sqlImageIndex);
+        header('Location: index.php');
 } else {
 }
 
