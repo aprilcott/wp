@@ -4,20 +4,13 @@ $name = $_POST['name'];
 $bio = $_POST['bio'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$date = date(('Y-m-d HH:MM:SS'));
+$date = date(('Y-m-d H:i:s'));
 $sql = "INSERT INTO `users`(`username`, `email`, `password`, `bio`, `joined_at`) VALUES (?,?,?,?,?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssss", $name, $email, $password, $bio, $date);
-if (!$stmt) {
-    die("Prepare failed: " . $conn->error);
-}
-if (!$stmt->execute()) {
-    die("Execute failed: " . $stmt->error);
-}
+stmt->execute();
 if ($stmt->affected_rows > 0) {
         header('Location: index.php');
-} else {
-    print("failed");
 }
 
 $stmt->close();
