@@ -12,6 +12,7 @@ $stmt->execute();
 if ($stmt->affected_rows > 0) {
         header('Location: index.php');
 } else {
+    print("failed");
 }
 
 $stmt->close();
