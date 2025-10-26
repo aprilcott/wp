@@ -22,7 +22,10 @@
                     <a class="nav-link ysabeau-sc-NavBar me-3" href="add.php"> Add Skills </a>
                 </li>
             </ul>
-            <form class="ms-auto d-flex p-md-3" role="search">
+            <form class="ms-auto mb-2 mt-2 d-flex p-md-3" role="search">
+                    <a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="skills.php">Login </a>
+                    <a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="register.php">Register </a>
+
                 <div class="input-group">
                 <button type="submit" class="btn search-btn text-gray material-symbols-outlined">
                         search

@@ -1,4 +1,6 @@
 const forms = document.querySelectorAll('.needs-validation')
+const forms_user = document.querySelectorAll('.needs-validation-user')
+
 const file = document.getElementById('formFile')
   // Loop over them and prevent submission
   Array.from(forms).forEach(form => {
