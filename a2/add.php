@@ -2,10 +2,21 @@
 <html>
     <?php $pageTitle = "Add skills";
     include 'header.inc';
-    include("db_connect.inc"); ?>
+    include("db_connect.inc");
+    include 'nav.inc';
+     ?>
 <body>
-    <?php include 'nav.inc'; ?>
-        <main class="section-container">
+        <main class="s<div class="footerGrad mt-5 py-5 container-fluid">
+    <footer class="card-footer">
+        <hr class="footerHR rounded-pill"/>
+        <div class="ysabeau-sc-Footer text-end">
+        <p class="mb-0">&copy; 2025 April Alice Benson <span class="footer-brand">SkillSwap</span></p>
+        </div>
+    </footer>
+    <?php
+    print("Balls")
+    ?>
+</div>ection-container">
             <div class="container-xl">
                 <div class="row">
                     <div class="col">
@@ -55,7 +66,9 @@
         </section>
             </div>
         </main>
-<?php include 'footer.inc'; ?>
+<?php 
+include 'footer.inc';
+?>
 <script async src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script async src="assets/js/scripts.js"></script>
 </body>
