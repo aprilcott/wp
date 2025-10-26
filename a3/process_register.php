@@ -1,6 +1,5 @@
 <?php
 include('db_connect.inc');
-$title = $_POST['title'];
 $name = $_POST['name'];
 $bio = $_POST['bio'];
 $email = $_POST['email'];
