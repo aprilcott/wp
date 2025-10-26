@@ -5,7 +5,7 @@ $bio = $_POST['bio'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $date = date(('d-m-Y'));
-$sql = "INSERT INTO `users`(`username`, `email`, `password`, `bio`, `joined_at`) VALUES ('?','?','?','?','?')";
+$sql = "INSERT INTO `users`(`username`, `email`, `password`, `bio`, `joined_at`) VALUES (?,?,?,?,?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssss", $name, $email, $password, $bio, $date);
 $stmt->execute();
