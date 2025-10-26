@@ -8,7 +8,12 @@ $date = date(('d-m-Y'));
 $sql = "INSERT INTO `users`(`username`, `email`, `password`, `bio`, `joined_at`) VALUES (?,?,?,?,?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssss", $name, $email, $password, $bio, $date);
-$stmt->execute();
+if (!$stmt) {
+    die("Prepare failed: " . $conn->error);
+}
+if (!$stmt->execute()) {
+    die("Execute failed: " . $stmt->error);
+}
 if ($stmt->affected_rows > 0) {
         header('Location: index.php');
 } else {
