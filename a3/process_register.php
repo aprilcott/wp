@@ -1,5 +1,5 @@
 <?php
-include('db_connect.inc');
+include('includes/db_connect.inc');
 $name = $_POST['name'];
 $bio = $_POST['bio'];
 $email = $_POST['email'];
