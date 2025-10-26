@@ -1,5 +1,5 @@
 <?php
-include('db_connect.inc');
+include('includes/db_connect.inc');
 $title = $_POST['title'];
 $description = $_POST['description'];
 $category = $_POST['category'];
