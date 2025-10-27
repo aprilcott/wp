@@ -27,12 +27,13 @@ if (!empty($row) || !empty($row_email)) {
     $_SESSION['flash_error_id'] = 1;
     header('Location: register.php');
     exit;
-} else if ($password != $Password_confirm) {
+} else if ($password <> $passwordConfirm) {
     $_SESSION['flash_error'] = "Passwords do not match.";
     $_SESSION['flash_bio'] = $bio;
     $_SESSION['flash_name'] = $name;
     $_SESSION['flash_email'] = $email;
     $_SESSION['flash_error_id'] = 2;
+    header('Location: register.php');
     exit;
 } else {
 $password_hash = password_hash($password, PASSWORD_BCRYPT);

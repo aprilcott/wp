@@ -6,7 +6,6 @@ const file = document.getElementById('formFile')
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', 
     function(event) {
-      console.log('Submitted');
       const submitError = document.getElementById('submit-alert');
       submitError.innerHTML = '';
       submitError.style.display = 'none';
@@ -19,20 +18,23 @@ const file = document.getElementById('formFile')
       // If valid, form will submit normally
     });
   });
-  // Array.from(forms_user).forEach(form => {
-    // form.addEventListener('submit', 
-    // function(event) {
-      // const submitError = document.getElementById('submit-alert');
-      // submitError.innerHTML = '';
-      // submitError.style.display = 'none';
-      // if (!checkExtension(file)) {
-        // submitError.innerHTML = 'Only image files are allowed (JPG, JPEG, PNG, GIF, WEBP)';
-        // submitError.style.display = 'block';
-        // return false;
-      // }
-      // // If valid, form will submit normally
-    // });
-  // });
+  Array.from(forms_user).forEach(form => {
+    form.addEventListener('submit', 
+    function(event) {
+      const email = document.getElementById('email');
+      const submitError = document.getElementById('submit-alert');
+      submitError.innerHTML = '';
+      submitError.style.display = 'none';
+      if (!isEmail(email)) {
+        event.preventDefault();
+
+        submitError.innerHTML = 'Input must be a valid email address (contains @ and .)';
+        submitError.style.display = 'block';
+        return false;
+      }
+      // If valid, form will submit normally
+    });
+  });
 function checkExtension(file) {
   if (file.value.endsWith('.png')) {
     return true;

@@ -1,18 +1,21 @@
 <?php
 session_start();
 include 'includes/header.inc';
- include("includes/db_connect.inc"); 
-    if (array_key_exists('error_id', $_SESSION)) {
+include("includes/db_connect.inc"); 
+    if (array_key_exists('flash_error', $_SESSION)) {
 
     //print('<body onload="showError(' . $_SESSION['error'] . ')">'); 
-    if ($_SESSION['flash_error_id'] = 1) {
+    if ($_SESSION['flash_error_id'] == 1) {
     print('<body onload="errorRegister(' . "'" . $_SESSION['flash_error'] . "', '" . $_SESSION['flash_bio'] . "'" . ')">');
+    
     // print($_SESSION['flash_name']);
     unset($_SESSION['flash_error']);
     unset($_SESSION['flash_bio']);
-
-    } else if ($_SESSION['flash_error_id'] = 2) {
+    unset($_SESSION['flash_error_id']);
+    
+    } else if ($_SESSION['flash_error_id'] == 2) {
     print('<body onload="errorRegisterPass(' . "'" . $_SESSION['flash_error'] . "', '" . $_SESSION['flash_bio'] . "', '" . $_SESSION['flash_name'] . "', '" . $_SESSION['flash_email'] . "'" . ')">');
+        unset($_SESSION['flash_error_id']);    
         unset($_SESSION['flash_error']);
         unset($_SESSION['flash_bio']);
         unset($_SESSION['flash_name']);
@@ -23,7 +26,6 @@ include 'includes/header.inc';
     }
 }
     include 'includes/nav.inc';
-    // print($_SESSION['flash_error_id']);
     ?>
     
 <main class="section-container">
@@ -39,7 +41,7 @@ include 'includes/header.inc';
             <form class="needs-validation-user" action="process_register.php" method="post" enctype="multipart/form-data">
                 <div class="form-group add-form">
                         <div class="form-required">
-                            <label>Name</label>
+                            <label>User Name</label>
                         </div>
                         <input id="name" name="name" type="text" class="form-control" placeholder="Enter User Name" required>
                         <div class="form-required">
