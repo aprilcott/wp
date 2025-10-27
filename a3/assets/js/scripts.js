@@ -6,6 +6,7 @@ const file = document.getElementById('formFile')
   Array.from(forms).forEach(form => {
     form.addEventListener('submit', 
     function(event) {
+      console.log('Submitted');
       const submitError = document.getElementById('submit-alert');
       submitError.innerHTML = '';
       submitError.style.display = 'none';
@@ -18,6 +19,20 @@ const file = document.getElementById('formFile')
       // If valid, form will submit normally
     });
   });
+  // Array.from(forms_user).forEach(form => {
+    // form.addEventListener('submit', 
+    // function(event) {
+      // const submitError = document.getElementById('submit-alert');
+      // submitError.innerHTML = '';
+      // submitError.style.display = 'none';
+      // if (!checkExtension(file)) {
+        // submitError.innerHTML = 'Only image files are allowed (JPG, JPEG, PNG, GIF, WEBP)';
+        // submitError.style.display = 'block';
+        // return false;
+      // }
+      // // If valid, form will submit normally
+    // });
+  // });
 function checkExtension(file) {
   if (file.value.endsWith('.png')) {
     return true;
@@ -31,6 +46,13 @@ function checkExtension(file) {
     return true;
   }
 }
+function isEmail(input) {
+  if (input.value.includes('@') && input.value.includes('.')) {
+    return true;
+  } else {
+    return false;
+  }
+}
 document.addEventListener('DOMContentLoaded', Function())
   const galleryImages = document.querySelectorAll('.gallery-image')
   const modalImage = document.getElementById('modal-img')
@@ -40,4 +62,35 @@ document.addEventListener('DOMContentLoaded', Function())
       modalImage.alt = this.alt
     })
   })
-
+function showError(errorString) {
+  const submitError = document.getElementById('submit-alert');
+  submitError.innerHTML = errorString;
+  submitError.style.display = 'block';
+}
+function refillBio(bioInfo) {
+  const bioField = document.getElementById('registerBio');
+  bioField.value = bioInfo;
+}
+function refillName(nameInfo) {
+  const nameField = document.getElementById('name');
+  nameField.value = nameInfo;
+}
+function refillEmail(emailInfo) {
+  const emailField = document.getElementById('email');
+  emailField.value = emailInfo;
+}
+function errorRegister(errorString, bioInfo) {
+  showError(errorString);
+  refillBio(bioInfo);
+}
+function errorRegisterPass(errorString, bioInfo, nameInfo, emailInfo) {
+  showError(errorString);
+  refillBio(bioInfo);
+  refillName(nameInfo);
+  refillEmail(emailInfo);
+}
+function errorRegisterEmail(errorString, bioInfo, nameInfo) {
+  showError(errorString);
+  refillBio(bioInfo);
+  refillName(nameInfo);
+}

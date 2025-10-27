@@ -1,8 +1,31 @@
 <?php
-    include 'includes/header.inc';
-    include("includes/db_connect.inc"); ?>
-    <body>
-    <?php include 'includes/nav.inc'; ?>
+session_start();
+include 'includes/header.inc';
+ include("includes/db_connect.inc"); 
+    if (array_key_exists('error_id', $_SESSION)) {
+
+    //print('<body onload="showError(' . $_SESSION['error'] . ')">'); 
+    if ($_SESSION['flash_error_id'] = 1) {
+    print('<body onload="errorRegister(' . "'" . $_SESSION['flash_error'] . "', '" . $_SESSION['flash_bio'] . "'" . ')">');
+    // print($_SESSION['flash_name']);
+    unset($_SESSION['flash_error']);
+    unset($_SESSION['flash_bio']);
+
+    } else if ($_SESSION['flash_error_id'] = 2) {
+    print('<body onload="errorRegisterPass(' . "'" . $_SESSION['flash_error'] . "', '" . $_SESSION['flash_bio'] . "', '" . $_SESSION['flash_name'] . "', '" . $_SESSION['flash_email'] . "'" . ')">');
+        unset($_SESSION['flash_error']);
+        unset($_SESSION['flash_bio']);
+        unset($_SESSION['flash_name']);
+        unset($_SESSION['flash_email']);
+
+    } else {
+        print('<body>');
+    }
+}
+    include 'includes/nav.inc';
+    // print($_SESSION['flash_error_id']);
+    ?>
+    
 <main class="section-container">
             <div class="container-xl">
                 <div class="row">
@@ -18,15 +41,15 @@
                         <div class="form-required">
                             <label>Name</label>
                         </div>
-                        <input name="name" type="text" class="form-control" placeholder="Enter User Name" required>
+                        <input id="name" name="name" type="text" class="form-control" placeholder="Enter User Name" required>
                         <div class="form-required">
                             <label>Bio</label>
                         </div>
-                        <textarea name="bio" class="form-control" rows="5" placeholder="Enter Bio" required></textarea>
+                        <textarea id="registerBio" name="bio" class="form-control" rows="5" placeholder="Enter Bio" required></textarea>
                         <div class="form-required">
                             <label>Email</label>
                         </div>
-                    <input name="email" type="text" class="form-control" placeholder="Enter email" required>
+                    <input id="email" name="email" type="text" class="form-control" placeholder="Enter email" required>
                     <div class="form-required">
                         <label>Password</label>
                     </div>
@@ -41,6 +64,7 @@
                     Submit
                 </button>
             </form>
+            <script onload="showError"></script>
         </section>
             </div>
         </main>
