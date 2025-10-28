@@ -66,7 +66,7 @@
                         echo '<option value="1">Beginner</option>';
                         echo '<option selected value="2">Intermediate</option>';
                         echo '<option value="3">Expert</option>';
-                        } else if ($skill['level'] == "Intermediate") {
+                        } else if ($skill['level'] == "Expert") {
                         echo '<option value="1">Beginner</option>';
                         echo '<option value="2">Intermediate</option>';
                         echo '<option selected value="3">Expert</option>';
@@ -76,7 +76,7 @@
                     <div class="">
                         <label>Replace image (optional)</label>
                     </div>
-                        <input name="image" type="file" id="formFile" class="form-control needs-validation" required>
+                        <input name="image" type="file" id="formFile" class="form-control needs-validation">
                     </div>
                     <div id="submit-alert" class="alert alert-danger form-alert mt-2"></div>
                 <button type="submit" id="submit" class=" mt-2 btn btn-secondary btn-block btn-primary ysabeau-sc-orange-button rounded-pill">

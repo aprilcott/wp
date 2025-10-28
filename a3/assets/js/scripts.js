@@ -36,6 +36,7 @@ const file = document.getElementById('formFile')
     });
   });
 function checkExtension(file) {
+  console.log(file.value);
   if (file.value.endsWith('.png')) {
     return true;
   } else if (file.value.endsWith('.jpg')) {
@@ -45,6 +46,8 @@ function checkExtension(file) {
   } else if (file.value.endsWith('.webp')) {
     return true;
   } else if (file.value.endsWith('.gif')) {
+    return true;
+  } else if (file.value.length === 0) {
     return true;
   }
 }
