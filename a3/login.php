@@ -1,10 +1,9 @@
 <?php
-session_start();
 include 'includes/header.inc';
 include("includes/db_connect.inc"); 
     if (array_key_exists('flash_error', $_SESSION)) {
     if ($_SESSION['flash_error_id'] == 3) {
-    print('<body onload="errorRegister(' . "'" . $_SESSION['flash_error'] . "'" . ')">');
+    print('<body onload="showError(' . "'" . $_SESSION['flash_error'] . "'" . ')">');
     unset($_SESSION['flash_error_id']);    
     unset($_SESSION['flash_error']);
     } else {
@@ -12,10 +11,7 @@ include("includes/db_connect.inc");
 
     }
 }
-    include 'includes/nav.inc';
-        print($_SESSION['flash_error']);
-        print("534543");
-    ?>
+    include 'includes/nav.inc';    ?>
     
 <main class="section-container">
             <div class="container-xl">

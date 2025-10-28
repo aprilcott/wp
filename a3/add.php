@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <?php $pageTitle = "Add skills";
+
+    <?php
     include 'includes/header.inc';
-    include("includes/db_connect.inc"); ?>
+    include 'includes/nav.inc';
+    $pageTitle = "Add skills";
+    include 'includes/header.inc';
+    include("includes/db_connect.inc");
+    if ($_SESSION['userName'] === null) {
+    $_SESSION['flash_error_id'] = 4;
+    header('Location: index.php');
+    }
+    ?>
 <body>
-    <?php include 'includes/nav.inc'; ?>
         <main class="section-container">
             <div class="container-xl">
                 <div class="row">

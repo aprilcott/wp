@@ -23,8 +23,15 @@
                 </li>
             </ul>
             <form class="ms-auto mb-2 mt-2 d-flex p-md-3" role="search">
-                    <a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="login.php">Login </a>
-                    <a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="register.php">Register </a>
+                <?php
+                if (array_key_exists('userName', $_SESSION)) {
+                    echo '<a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="login.php">' . $_SESSION['userName'] . ' </a>';
+                    echo ' <a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="logout.php">Logout </a>';
+                } else {
+                    echo '<a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="login.php">Login </a>';
+                    echo ' <a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="register.php">Register </a>';
+                }
+                ?>
 
                 <div class="input-group">
                 <button type="submit" class="btn search-btn text-gray material-symbols-outlined">

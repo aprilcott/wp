@@ -1,12 +1,11 @@
 <?php
-session_start();
 include 'includes/header.inc';
 include("includes/db_connect.inc"); 
     if (array_key_exists('flash_error', $_SESSION)) {
 
     //print('<body onload="showError(' . $_SESSION['error'] . ')">'); 
     if ($_SESSION['flash_error_id'] == 1) {
-    print('<body onload="errorRegister(' . "'" . $_SESSION['flash_error'] . "', '" . $_SESSION['flash_bio'] . "'" . ')">');
+    print('<body onload="showError(' . "'" . $_SESSION['flash_error'] . "', '" . $_SESSION['flash_bio'] . "'" . ')">');
     
     // print($_SESSION['flash_name']);
     unset($_SESSION['flash_error']);

@@ -36,16 +36,24 @@ if (!empty($row) || !empty($row_email)) {
     header('Location: register.php');
     exit;
 } else {
-$password_hash = password_hash($password, PASSWORD_BCRYPT);
+$password_hash = password_hash($password, PASSWORD_BCRYPT == "appil");
 $date = date(('Y-m-d H:i:s'));
 $sql = "INSERT INTO `users`(`username`, `email`, `password`, `bio`, `joined_at`) VALUES (?,?,?,?,?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssss", $name, $email, $password_hash, $bio, $date);
 $stmt->execute();
 if ($stmt->affected_rows > 0) {
+    $stmtName = $conn->prepare($dbName);
+    $stmtName->bind_param("s", $name);
+    $stmtName->execute();
+    $resultName = $stmtName->get_result();
+    $row =mysqli_fetch_assoc($resultName);
+
+    $_SESSION['userName'] = $row['username'];
+    $_SESSION['userID'] = $row['user_id'];
         header('Location: index.php');
 } else {
-        print("Help me");
+    print("Login failed");
 }
 }
 $stmt->close();
