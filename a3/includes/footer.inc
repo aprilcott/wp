@@ -1,4 +1,5 @@
         <?php
+        $_SESSION["Previous-page"] = $_SESSION["returnPage"];
         $_SESSION["returnPage"] = basename($_SERVER['PHP_SELF']);
         var_dump($_SESSION);
         if (array_key_exists('flash_error_id', $_SESSION)) {

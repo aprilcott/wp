@@ -39,6 +39,7 @@
                 </button>
                 <input class="form-control bg-light ysabeau-sc-NavBar" name="search" type="text" placeholder="Search skills..." aria-label="Search">
                 </div>
+                </form>
             </div>
             </div>
         </nav>

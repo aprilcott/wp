@@ -24,8 +24,8 @@ echo '<div class="container-xl">';
             echo $row['title'];
             echo '</h1>';
             echo '<div class="row">';
-                echo '<div class="col"  data-bs-toggle="modal" data-bs-target="#blank-modal">';
-                    echo '<img class="img-fluid gallery-image img-thumbnail w-25" src="assets/images/skills/';
+                echo '<div class="col">';
+                    echo '<img data-bs-toggle="modal" data-bs-target="#blank-modal" class="img-fluid gallery-image img-thumbnail w-25" src="assets/images/skills/';
                     echo $row['image_path'];
                     echo '"/>';
                 echo '</div>';
@@ -79,6 +79,11 @@ echo '<div class="container-xl">';
                         echo $rowUser['bio'];
                         echo '</div>';
                     echo '</p>';
+                    if ($rowUser['username'] == $_SESSION['userName']) {
+                        echo '<button type="button" class="me-3 btn btn-warning">Edit details</button>';
+                        echo '<button type="button" class="me-3 btn btn-danger">Delete skill</button>';
+
+                    }
                 echo '</div>';
             echo '</div>';
         echo '</div>';

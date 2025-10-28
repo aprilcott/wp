@@ -15,7 +15,6 @@ if ($_SERVER['SERVER_NAME'] == "localhost") {
     }
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
-    print("help");
     die("Connection failed: ". $conn->connect_error);
 }
 ?>

@@ -1,7 +1,11 @@
 <?php
 session_start();
-header('Location: ' . $_SESSION["returnPage"]);
 $return = $_SESSION["returnPage"];
+$prev = $_SESSION["Previous-page"];
 session_destroy();
-header('Location: ' . $return);
+    if ($return == "details.php") {
+    header('Location: ' . $prev);
+    } else {
+    header('Location: ' . $return);
+    }
 ?>
