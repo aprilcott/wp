@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('includes/db_connect.inc');
 $title = $_POST['title'];
 $description = $_POST['description'];
@@ -13,9 +14,9 @@ $count = $row["total"];
 $sqlImageIndex = $count + 1;
 $imgPathInfo = pathinfo($_FILES['image']['name']);
 $newImageName = $sqlImageIndex . '.' . $imgPathInfo['extension'];
-$sql = "INSERT INTO skills (title, description, category, rate_per_hr, level, image_path) VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO skills (user_id, title, description, category, rate_per_hr, level, image_path) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssds", $title, $description, $category, $rate, $level, $newImageName);
+$stmt->bind_param("issssds",$_SESSION['userID'], $title, $description, $category, $rate, $level, $newImageName);
 $stmt->execute();
 $uploadDirectory =  'assets/images/skills/';
 if ($stmt->affected_rows > 0) {
