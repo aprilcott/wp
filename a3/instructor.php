@@ -11,87 +11,42 @@
     <main class="section-container">
         <?php
         $userID = $_GET['id'];
-        $query = "SELECT * FROM skills WHERE user_id = $userID";
-        $result = mysqli_query($conn, $query);
-        $rowName = mysqli_fetch_assoc($result); 
+        $querySkill = "SELECT * FROM skills WHERE user_id = $userID";
         $queryUser = "SELECT * FROM users WHERE user_id = $userID";
-        $resultUser = mysqli_query($conn, $queryUser);
-        $row = mysqli_fetch_assoc($resultUser);
-
+        $resultUser = mysqli_query($conn, $queryUser); 
+        $resultSkill = mysqli_query($conn, $querySkill);
+        $rowUser = mysqli_fetch_assoc($resultUser);
+        $skills = mysqli_fetch_all($resultSkill, MYSQLI_ASSOC);
+        // echo(var_dump($rowUser));
+        // echo(var_dump($rowSkill));
+        // echo var_dump($skills);
 echo '<div class="container-xl">';
-    echo '<div class="row gy-3">';
         echo '<div class="col">';
-            echo '<h1 class="baskervville-headings">';
-            echo $row['username'];
+            echo '<h1 class="baskervville-headings"> Instructor: ';
+            echo $rowUser['username'];
             echo '</h1>';
-            echo '<div class="row">';
-                echo '<div class="col"  data-bs-toggle="modal" data-bs-target="#blank-modal">';
-                    echo '<img class="img-fluid gallery-image img-thumbnail w-25" src="assets/images/skills/';
-                    echo $row['image_path'];
-                    echo '"/>';
+            echo '<h1 class="ysabeau-sc-detail-sub-heading-details">';
+            echo $rowUser['bio'];
+            echo '</h1>';
+            echo '<h1 class="baskervville-headings">';
+            echo 'Skills offered';
+            echo '</h1>';
+            echo '<div class="row gx-3">';
+            foreach($skills as $skillKey => $skillValue) {
+                echo '<div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">';
+                echo '<img class="img-fluid gallery-image rounded-top" src="assets/images/skills/';
+                echo "{$skillValue["image_path"]}\"";
+                echo  'alt="'; echo $skillValue['title']; echo '">';
+                echo '<p class="text-start  mt-3 ysabeau-sc-detail-heading">'; echo $skillValue['title']; echo '</p>';
+                echo '<p class="text-start  mt-3 ysabeau-sc-detail-sub-heading-details">'; echo 'Rate:'; echo $skillValue['rate_per_hr']; echo '</p>';
+                echo "<a class='mt-2 btn btn-secondary rounded-pill ysabeau-sc-orange-button' href=\"details.php?id='". urlencode($skillValue['skill_id']) . "'\">View </a>";
                 echo '</div>';
-            echo '<div class="row">';
-                echo '<div class="col">';
-                    echo '<p class="ysabeau-sc-detail-sub-heading-details">';
-                    echo $row['description'];
-                    echo '</p>';
-                echo '</div>';
-            echo '</div>';
-            echo '<div class="row">';
-                echo '<div class="col">';
-                    echo '<p>';
-                        echo '<span class="ysabeau-sc-detail-heading">Category:</span> ';
-                        echo '<span class="ysabeau-sc-detail-sub-heading-details">';
-                        echo $row['category'];
-                        echo '</span> ';
-                    echo '</p>';
-                echo '</div>';
-            echo '</div>';
-            echo '<div class="row">';
-                echo '<div class="col">';
-                    echo '<p>';
-                        echo '<span class="ysabeau-sc-detail-heading">Level:</span> ';
-                        echo '<span class="ysabeau-sc-detail-sub-heading-details">';
-                        echo $row['level'];
-                        echo '</span>';
-                    echo '</p>';
-                echo '</div>';
-            echo '</div>';
-            echo '<div class="row">';
-                echo '<div class="col">';
-                    echo '<p>';
-                        echo '<span class="ysabeau-sc-detail-heading">Rate:</span> ';
-                        echo '<span class="ysabeau-sc-detail-sub-heading-details">';
-                        echo '$';
-                        echo $row['rate_per_hr'];
-                        echo '</span>';
-                    echo '</p>';
-                echo '</div>';
-            echo '</div>';
-            echo '<hr>';
-            echo '<div class="row">';
-                echo '<div class="col">';
-                    echo '<p>';
-                        echo '<span class="ysabeau-sc-detail-heading">Instructor:</span> ';
-                        echo '<span class="ysabeau-sc-detail-heading">';
-                        echo $rowUser['username'];
-                        echo '</span>';
-                        echo '<div class="ysabeau-sc-detail-sub-heading-details">';
-                        echo $rowUser['bio'];
-                        echo '</div>';
-                    echo '</p>';
-                echo '</div>';
+            }
             echo '</div>';
         echo '</div>';
     echo '</div>';
 echo '</div>';
 ?>
-                </p>
-            </div>
-            </div>
-            </div>
-</div>
-</div>
         </main>
 <?php include 'includes/footer.inc'; ?>
   

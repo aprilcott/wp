@@ -4,8 +4,11 @@
     include 'includes/header.inc';
     include("includes/db_connect.inc"); ?>
 <body>
-    <?php include 'includes/nav.inc'; ?>
-
+    <?php include 'includes/nav.inc';
+    $querySkill = "SELECT DISTINCT category FROM skills";
+    $resultSkill = mysqli_query($conn, $querySkill);
+    $skills = mysqli_fetch_all($resultSkill, MYSQLI_ASSOC);
+    ?>
         <main class="section-container">
             <div class="container-xl">
                 <div class="row">
@@ -15,7 +18,19 @@
                         </h1>
                     </div>
                 </div>
-                <div class="row gx-3">
+                      <div class="ysabeau-sc-sub-heading mb-3">Filter by category</div>
+      <select id="gallery-filter" class="form-select" aria-label="Filter by category">
+        <?php
+        foreach($skills as $skillKey => $skillValue) {
+            if ($skillKey == 0) {
+               echo '<option value="' .$skillValue['category'] .  '" selected>' . $skillValue['category'] . '</option>';
+            } else {
+                echo '<option value="' .$skillValue['category'] .  '">' . $skillValue['category'] . '</option>';
+            }
+        }
+        ?>
+      </select>
+                <div class="row gx-3 mt-3">
                                                     <?php
                                 $query = "SELECT COUNT(*) as total FROM skills";
                                 $result = mysqli_query($conn, $query);
@@ -25,7 +40,7 @@
                                     $query = "SELECT * FROM skills WHERE skill_id = $i";
                                     $result = mysqli_query($conn, $query);
                                     $row =mysqli_fetch_assoc($result);
-                                    echo '<div class="col-md-3 col-sm-6"  data-bs-toggle="modal" data-bs-target="#blank-modal">';
+                                    echo '<div class="col-md-3 col-sm-6 ' . $row['category'] . '"' . '" data-bs-toggle="modal" data-bs-target="#blank-modal">';
                                     echo '<img class="img-fluid gallery-image rounded-top" src="assets/images/skills/';
                                     echo "{$row["image_path"]}\"";
                                     echo  'alt=";'; echo $row['title']; echo '">';

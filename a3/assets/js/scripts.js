@@ -96,3 +96,16 @@ function errorRegisterEmail(errorString, bioInfo, nameInfo) {
   refillBio(bioInfo);
   refillName(nameInfo);
 }
+const categorySelect = document.getElementById("gallery-filter");
+      categorySelect.addEventListener("change", function() {
+        const selectedValue = this.value;
+        const hide = document.getElementsByClassName('col-md-3');
+        const show = document.getElementsByClassName(selectedValue)
+        for (i = 0; i < hide.length; i++) {
+        hide[i].style.display = 'none'
+        }
+        for (i = 0; i < show.length; i++) {
+          show[i].style.display = 'block'
+          console.log(show[i])
+        }
+      });

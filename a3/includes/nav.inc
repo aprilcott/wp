@@ -22,7 +22,7 @@
                     <a class="nav-link ysabeau-sc-NavBar me-3" href="add.php"> Add Skills </a>
                 </li>
             </ul>
-            <form class="ms-auto mb-2 mt-2 d-flex p-md-3" role="search">
+            <form  method="post" action="search.php" class="ms-auto mb-2 mt-2 d-flex p-md-3" role="search">
                 <?php
                 if (array_key_exists('userName', $_SESSION)) {
                     echo '<a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="login.php">' . $_SESSION['userName'] . ' </a>';
@@ -37,9 +37,8 @@
                 <button type="submit" class="btn search-btn text-gray material-symbols-outlined">
                         search
                 </button>
-                <input class="form-control bg-light ysabeau-sc-NavBar" type="search" placeholder="Search skills..." aria-label="Search">
+                <input class="form-control bg-light ysabeau-sc-NavBar" name="search" type="text" placeholder="Search skills..." aria-label="Search">
                 </div>
-            </form>
             </div>
             </div>
         </nav>
