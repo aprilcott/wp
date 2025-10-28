@@ -80,7 +80,9 @@ echo '<div class="container-xl">';
                         echo '</div>';
                     echo '</p>';
                     if ($rowUser['username'] == $_SESSION['userName']) {
-                        echo '<button type="button" class="me-3 btn btn-warning">Edit details</button>';
+                        $_SESSION['editRow'] = $row;
+                        $_SESSION['editUname'] = $rowUser['username'];
+                        echo '<a href="edit.php" type="button" class="me-3 btn btn-warning">Edit details</a>';
                         echo '<button type="button" class="me-3 btn btn-danger">Delete skill</button>';
 
                     }

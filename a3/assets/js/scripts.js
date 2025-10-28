@@ -55,6 +55,9 @@ function isEmail(input) {
     return false;
   }
 }
+function fillForm(title, description, category, rate, level) {
+  
+}
 document.addEventListener('DOMContentLoaded', Function())
   const galleryImages = document.querySelectorAll('.gallery-image')
   const modalImage = document.getElementById('modal-img')
