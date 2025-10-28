@@ -36,11 +36,10 @@ if (!empty($row) || !empty($row_email)) {
     header('Location: register.php');
     exit;
 } else {
-$password_hash = password_hash($password, PASSWORD_BCRYPT == "appil");
 $date = date(('Y-m-d H:i:s'));
-$sql = "INSERT INTO `users`(`username`, `email`, `password`, `bio`, `joined_at`) VALUES (?,?,?,?,?)";
+$sql = "INSERT INTO `users`(`username`, `email`, `password`, `bio`, `joined_at`) VALUES (?,?,sha(?),?,?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssss", $name, $email, $password_hash, $bio, $date);
+$stmt->bind_param("sssss", $name, $email, $password, $bio, $date);
 $stmt->execute();
 if ($stmt->affected_rows > 0) {
     $stmtName = $conn->prepare($dbName);
