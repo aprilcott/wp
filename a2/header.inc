@@ -2,7 +2,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title><?php echo $pageTitle; ?></title>
-    <meta name="author" content="Test">
+    <meta name="April" content="Test">
     <link rel="icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
