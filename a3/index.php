@@ -1,9 +1,7 @@
 <?php $pageTitle = "Home";
     include 'includes/header.inc';
     include("includes/db_connect.inc");
-    include 'includes/nav.inc'; ?>
-    <?php
-    session_start();
+    include 'includes/nav.inc';
     if ($_SESSION["newLogin"] == true) {
     echo '<div class="container-fluid">';
     echo '<div id="index-welcome" class="index-alert alert alert-success mt-2 rounded-end rounded-start">Welcome, ' . $_SESSION['userName'] . '</div>';

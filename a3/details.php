@@ -115,7 +115,7 @@ echo '</div>';
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary ysabeau-sc-modal-button" data-bs-dismiss="modal">Cancel</button>
-        <a href="process_delete.php" class="ysabeau-sc-modal-button btn btn-danger" >Yes, Delete</a>
+        <a href="delete.php" class="ysabeau-sc-modal-button btn btn-danger" >Yes, Delete</a>
       </div> 
     </div>
   </div>
