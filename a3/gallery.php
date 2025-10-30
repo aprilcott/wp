@@ -40,7 +40,7 @@
                                     $query = "SELECT * FROM skills WHERE skill_id = $i";
                                     $result = mysqli_query($conn, $query);
                                     $row =mysqli_fetch_assoc($result);
-                                    echo '<div class="col-md-3 col-sm-6 ' . $row['category'] . '"' . '">';
+                                    echo '<div class="col-md-3 gallery-col col-sm-6 ' . $row['category'] . '"' . '">';
                                     echo '<img data-bs-toggle="modal" data-bs-target="#blank-modal" class="img-fluid gallery-image rounded-top" src="assets/images/skills/';
                                     echo "{$row["image_path"]}\"";
                                     echo  'alt=";'; echo $row['title']; echo '">';

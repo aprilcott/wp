@@ -58,9 +58,6 @@ function isEmail(input) {
     return false;
   }
 }
-function fillForm(title, description, category, rate, level) {
-  
-}
 document.addEventListener('DOMContentLoaded', Function())
   const galleryImages = document.querySelectorAll('.gallery-image')
   const modalImage = document.getElementById('modal-img')
@@ -105,7 +102,7 @@ function errorRegisterEmail(errorString, bioInfo, nameInfo) {
 const categorySelect = document.getElementById("gallery-filter");
       categorySelect.addEventListener("change", function() {
         const selectedValue = this.value;
-        const hide = document.getElementsByClassName('col-md-3');
+        const hide = document.getElementsByClassName('gallery-col');
         const show = document.getElementsByClassName(selectedValue)
         for (i = 0; i < hide.length; i++) {
         hide[i].style.display = 'none'

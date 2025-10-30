@@ -83,7 +83,8 @@ echo '<div class="container-xl">';
                         $_SESSION['editRow'] = $row;
                         $_SESSION['editUname'] = $rowUser['username'];
                         echo '<a href="edit.php" type="button" class="me-3 btn btn-warning">Edit details</a>';
-                        echo '<button type="button" class="me-3 btn btn-danger">Delete skill</button>';
+                        echo '<a href="process_delete.php" type="button" class="me-3 btn btn-danger">Delete skill</a>';
+
 
                     }
                 echo '</div>';
