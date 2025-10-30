@@ -32,14 +32,9 @@
                         </thead>
                         <tbody>
                             <?php
-                            $query = "SELECT COUNT(*) as total FROM skills";
+                                $query = "SELECT * FROM skills ORDER BY skill_id ASC";
                                 $result = mysqli_query($conn, $query);
-                                $row =mysqli_fetch_assoc($result);
-                                $count = $row["total"];
-                                 for ($i = 1; $i <= $count; $i++) {
-                                $query = "SELECT * FROM skills WHERE skill_id = $i";
-                                $result = mysqli_query($conn, $query);
-                                $row = mysqli_fetch_assoc($result);
+                                while($row = mysqli_fetch_assoc($result)) {
                                 if ($row) {
                                     echo "<tr>";
                                     echo "<td><a href=\"details.php?id='". urlencode($row['skill_id']) . "'\">{$row['title']}</a></td>";

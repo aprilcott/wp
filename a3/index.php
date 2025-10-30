@@ -21,16 +21,10 @@
             <div id="skillCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                                 <?php
-                                $query = "SELECT COUNT(*) as total FROM skills";
+                                $query = "SELECT * FROM skills ORDER BY skill_id DESC limit 4";
                                 $result = mysqli_query($conn, $query);
-                                $row =mysqli_fetch_assoc($result);
-                                $count = $row["total"];
-                                $countEnd = $count - 4;
                                 $first = true;
-                                 for ($count; $count > $countEnd; $count--) {
-                                    $query = "SELECT * FROM skills WHERE skill_id = $count";
-                                    $result = mysqli_query($conn, $query);
-                                    $row =mysqli_fetch_assoc($result);
+                                while($row = mysqli_fetch_assoc($result)) {
                                     if ($first) {
                                     echo '<div class="carousel-item active">';
                                     $first = false;
@@ -61,15 +55,10 @@
                     </div>
             <div class="row mt-5">
                 <?php
-                                $query = "SELECT COUNT(*) as total FROM skills";
+                                $query = "SELECT * FROM skills ORDER BY skill_id DESC limit 4";
                                 $result = mysqli_query($conn, $query);
-                                $row =mysqli_fetch_assoc($result);
-                                $count = $row["total"];
-                                $countEnd = $count - 4;
-                                 for ($count; $count > $countEnd; $count--) {
-                                    $query = "SELECT * FROM skills WHERE skill_id = $count";
-                                    $result = mysqli_query($conn, $query);
-                                    $row = mysqli_fetch_assoc($result);
+                                $first = true;
+                                while($row = mysqli_fetch_assoc($result)) {
                                     echo '<div class="view-detail col-12 col-lg-3">';
                                     echo '<div class="ysabeau-sc-detail-heading">';
                                     echo "{$row["title"]}";

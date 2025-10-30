@@ -32,14 +32,9 @@
       </select>
                 <div class="row gx-3 mt-3">
                                                     <?php
-                                $query = "SELECT COUNT(*) as total FROM skills";
-                                $result = mysqli_query($conn, $query);
-                                $row =mysqli_fetch_assoc($result);
-                                $count = $row["total"];
-                                 for ($i = 1; $i <= $count; $i++) {
-                                    $query = "SELECT * FROM skills WHERE skill_id = $i";
+                                    $query = "SELECT * FROM skills ORDER BY skill_id ASC";
                                     $result = mysqli_query($conn, $query);
-                                    $row =mysqli_fetch_assoc($result);
+                                    while($row = mysqli_fetch_assoc($result)) {
                                     echo '<div class="col-md-3 gallery-col col-sm-6 ' . $row['category'] . '"' . '">';
                                     echo '<img data-bs-toggle="modal" data-bs-target="#blank-modal" class="img-fluid gallery-image rounded-top" src="assets/images/skills/';
                                     echo "{$row["image_path"]}\"";
