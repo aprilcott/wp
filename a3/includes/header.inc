@@ -24,7 +24,7 @@ if ($_SERVER["PHP_SELF"] == "/public_html/wp/a3/edit.php") {
     }
     $skill = $_SESSION['editRow'];
     echo '<body onload="fillForm(' . $skill['title'] . ", " . $skill['description'] . ", " . $skill['category'] . ", " . $skill['rate_per_hr'] . ", " . $skill['level'] . '">';
-} else if ($_SESSION["newLogin"] != null) {
+} else if (array_key_exists('newLogin', $_SESSION)) {
     echo '<div class="container-fluid">';
     echo '<div id="index-welcome" class="index-alert alert alert-success mt-2 rounded-end rounded-start">Welcome, ' . $_SESSION['userName'] . '</div>';
     echo '</div>';
