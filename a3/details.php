@@ -83,7 +83,7 @@ echo '<div class="container-xl">';
                         $_SESSION['editRow'] = $row;
                         $_SESSION['editUname'] = $rowUser['username'];
                         echo '<a href="edit.php" type="button" class="me-3 btn btn-warning">Edit details</a>';
-                        echo '<a href="process_delete.php" type="button" class="me-3 btn btn-danger">Delete skill</a>';
+                        echo '<a data-bs-toggle="modal" data-bs-target="#delete-modal" type="button" class="me-3 btn btn-danger">Delete skill</a>';
 
 
                     }
@@ -101,7 +101,24 @@ echo '</div>';
 </div>
         </main>
 <?php include 'includes/footer.inc'; ?>
-  
+
+<div class="modal fade" id="delete-modal" tabindex="-1"   aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="process_delete.php" type="button" class="btn btn-danger" >Close</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+
+
 <div class="modal fade" id="blank-modal" tabindex="-1"   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-md">
     <div class="modal-content">
