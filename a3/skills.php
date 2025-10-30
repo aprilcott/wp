@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<html>
-         <?php $pageTitle = "All Skill";
+    <?php $pageTitle = "All Skill";
     include 'includes/header.inc';
     include("includes/db_connect.inc"); ?>
-<body>
     <?php include 'includes/nav.inc'; ?>
 
         <main class="section-container">

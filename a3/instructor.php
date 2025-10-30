@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html>
-<html>
     <?php
-    $pageTitle = "Instructor";
-    include 'includes/header.inc';
     include("includes/db_connect.inc");
+    $userID = $_GET['id'];
+     $queryUser = "SELECT * FROM users WHERE user_id = $userID";
+     $resultUser = mysqli_query($conn, $queryUser); 
+     $rowUser = mysqli_fetch_assoc($resultUser);
+     $pageTitle = $rowUser['username'];
+    include 'includes/header.inc';
     ?>
 <body>
 <?php include 'includes/nav.inc'; ?>
@@ -17,6 +18,7 @@
         $resultSkill = mysqli_query($conn, $querySkill);
         $rowUser = mysqli_fetch_assoc($resultUser);
         $skills = mysqli_fetch_all($resultSkill, MYSQLI_ASSOC);
+        $pageTitle = $rowUser['username'];
         // echo(var_dump($rowUser));
         // echo(var_dump($rowSkill));
         // echo var_dump($skills);

@@ -1,17 +1,10 @@
 <?php
 include 'includes/header.inc';
 include("includes/db_connect.inc"); 
-    if (array_key_exists('flash_error', $_SESSION)) {
-    if ($_SESSION['flash_error_id'] == 3) {
-    print('<body onload="showError(' . "'" . $_SESSION['flash_error'] . "'" . ')">');
-    unset($_SESSION['flash_error_id']);    
-    unset($_SESSION['flash_error']);
-    } else {
-        print('<body>');
+include 'includes/nav.inc';
+$pageTitle = "Log in";
 
-    }
-}
-    include 'includes/nav.inc';    ?>
+?>
     
 <main class="section-container">
             <div class="container-xl">

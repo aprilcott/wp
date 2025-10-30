@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <?php $pageTitle = "Gallery";
+<?php $pageTitle = "Gallery";
     include 'includes/header.inc';
-    include("includes/db_connect.inc"); ?>
-<body>
-    <?php include 'includes/nav.inc';
+    include("includes/db_connect.inc");
+    include 'includes/nav.inc';
     $querySkill = "SELECT DISTINCT category FROM skills";
     $resultSkill = mysqli_query($conn, $querySkill);
     $skills = mysqli_fetch_all($resultSkill, MYSQLI_ASSOC);
@@ -35,10 +32,10 @@
                                     $query = "SELECT * FROM skills ORDER BY skill_id ASC";
                                     $result = mysqli_query($conn, $query);
                                     while($row = mysqli_fetch_assoc($result)) {
-                                    echo '<div class="col-md-3 gallery-col col-sm-6 ' . $row['category'] . '"' . '">';
+                                    echo '<div class="col-md-3 gallery-col col-sm-6 ' . $row['category'] . '">';
                                     echo '<img data-bs-toggle="modal" data-bs-target="#blank-modal" class="img-fluid gallery-image rounded-top" src="assets/images/skills/';
                                     echo "{$row["image_path"]}\"";
-                                    echo  'alt=";'; echo $row['title']; echo '">';
+                                    echo  'alt=" ' . $row['title'] . '">';
                                     echo '<p class="text-center  mt-3 galleryCaption">'; echo $row['title']; echo '</p>';
                                     echo '</div>';
                                  }

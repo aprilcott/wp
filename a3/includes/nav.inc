@@ -25,7 +25,7 @@
             <form  method="post" action="search.php" class="ms-auto mb-2 mt-2 d-flex p-md-3" role="search">
                 <?php
                 if (array_key_exists('userName', $_SESSION)) {
-                    echo '<a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="login.php">' . $_SESSION['userName'] . ' </a>';
+                    echo '<a class="nav-link ysabeau-sc-NavBar-user mt-1 me-3" href="login.php"> Hello, ' . $_SESSION['userName'] . ' </a>';
                     echo ' <a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="logout.php">Logout </a>';
                 } else {
                     echo '<a class="nav-link ysabeau-sc-NavBar mt-1 me-3" href="login.php">Login </a>';

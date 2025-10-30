@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html>
-<html>
     <?php $pageTitle = "Details";
     include 'includes/header.inc';
-    include("includes/db_connect.inc"); ?>
-<body>
-<?php include 'includes/nav.inc'; ?>
-    <main class="section-container">
-        <?php
+    include("includes/db_connect.inc");
+    include 'includes/nav.inc';
+    echo '<main class="section-container">';
         $id = $_GET['id'];
         $query = "SELECT * FROM skills WHERE skill_id = $id";
         $result = mysqli_query($conn, $query);
@@ -27,6 +22,7 @@ echo '<div class="container-xl">';
                 echo '<div class="col">';
                     echo '<img data-bs-toggle="modal" data-bs-target="#blank-modal" class="img-fluid gallery-image img-thumbnail w-25" src="assets/images/skills/';
                     echo $row['image_path'];
+                    echo '" alt="' . $row['title'];
                     echo '"/>';
                 echo '</div>';
             echo '<div class="row">';
@@ -82,8 +78,8 @@ echo '<div class="container-xl">';
                     if ($rowUser['username'] == $_SESSION['userName']) {
                         $_SESSION['editRow'] = $row;
                         $_SESSION['editUname'] = $rowUser['username'];
-                        echo '<a href="edit.php" type="button" class="me-3 btn btn-warning">Edit details</a>';
-                        echo '<a data-bs-toggle="modal" data-bs-target="#delete-modal" type="button" class="me-3 btn btn-danger">Delete skill</a>';
+                        echo '<a href="edit.php" class="me-3 btn btn-warning">Edit details</a>';
+                        echo '<a data-bs-toggle="modal" data-bs-target="#delete-modal" class="me-3 btn btn-danger">Delete skill</a>';
 
 
                     }
@@ -105,12 +101,21 @@ echo '</div>';
 <div class="modal fade" id="delete-modal" tabindex="-1"   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-md">
     <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a href="process_delete.php" type="button" class="btn btn-danger" >Close</a>
+        <div class="modal-header ysabeau-sc-sub-heading">
+            Confirm deletion
+            </div>
+      <div class="modal-body ysabeau-sc-sub-heading">
+            <?php
+            $id = $_GET['id'];
+            $query = "SELECT * FROM skills WHERE skill_id = $id";
+            $result = mysqli_query($conn, $query);
+            $row = mysqli_fetch_assoc($result); 
+            echo "Are you sure you want to delete " . $row['title'] . " "; 
+            ?>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary ysabeau-sc-modal-button" data-bs-dismiss="modal">Cancel</button>
+        <a href="process_delete.php" class="ysabeau-sc-modal-button btn btn-danger" >Yes, Delete</a>
       </div> 
     </div>
   </div>
@@ -123,7 +128,7 @@ echo '</div>';
   <div class="modal-dialog modal-dialog-centered modal-md">
     <div class="modal-content">
       <div class="modal-body">
-        <img id ="modal-img" src="assets/images/skills/" alt="" class="img-fluid">
+        <img id ="modal-img" class="img-fluid">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

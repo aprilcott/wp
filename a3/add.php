@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html>
-
     <?php
-    include 'includes/header.inc';
     $pageTitle = "Add skills";
     include 'includes/header.inc';
     include("includes/db_connect.inc");
+    include 'includes/nav.inc';
     if ($_SESSION['userName'] === null) {
         print("redirect");
     $_SESSION['flash_error_id'] = 4;
     header('Location: index.php');
     }
-    include 'includes/nav.inc';
     ?>
 <body>
         <main class="section-container">

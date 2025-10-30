@@ -19,6 +19,7 @@ if (sha1($password) <> $row["password"]) {
 } else {
     $_SESSION['userName'] = $row['username'];
     $_SESSION['userID'] = $row['user_id'];
+    $_SESSION['newLogin'] = true;
     header('Location: index.php');
 }
 

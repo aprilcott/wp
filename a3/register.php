@@ -1,30 +1,8 @@
 <?php
+$pageTitle = "Register user";
 include 'includes/header.inc';
 include("includes/db_connect.inc"); 
-    if (array_key_exists('flash_error', $_SESSION)) {
-
-    //print('<body onload="showError(' . $_SESSION['error'] . ')">'); 
-    if ($_SESSION['flash_error_id'] == 1) {
-    print('<body onload="showError(' . "'" . $_SESSION['flash_error'] . "', '" . $_SESSION['flash_bio'] . "'" . ')">');
-    
-    // print($_SESSION['flash_name']);
-    unset($_SESSION['flash_error']);
-    unset($_SESSION['flash_bio']);
-    unset($_SESSION['flash_error_id']);
-    
-    } else if ($_SESSION['flash_error_id'] == 2) {
-    print('<body onload="errorRegisterPass(' . "'" . $_SESSION['flash_error'] . "', '" . $_SESSION['flash_bio'] . "', '" . $_SESSION['flash_name'] . "', '" . $_SESSION['flash_email'] . "'" . ')">');
-        unset($_SESSION['flash_error_id']);    
-        unset($_SESSION['flash_error']);
-        unset($_SESSION['flash_bio']);
-        unset($_SESSION['flash_name']);
-        unset($_SESSION['flash_email']);
-
-    } else {
-        print('<body>');
-    }
-}
-    include 'includes/nav.inc';
+include 'includes/nav.inc';
     ?>
     
 <main class="section-container">

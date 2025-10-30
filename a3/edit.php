@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html>
-
     <?php
-    include 'includes/header.inc';
-    $pageTitle = "Add skills";
+    $pageTitle = "Edit skill";
     include 'includes/header.inc';
     include("includes/db_connect.inc");
-    if ($_SESSION['userName'] === null || $_SESSION['userName'] != $_SESSION['editUname']) {
-        print("redirect");
-    $_SESSION['flash_error_id'] = 4;
-    header('Location: index.php');
-    }
     include 'includes/nav.inc';
-    $skill = $_SESSION['editRow'];
-    echo '<body onload="fillForm(' . $skill['title'] . ", " . $skill['description'] . ", " . $skill['category'] . ", " . $skill['rate_per_hr'] . ", " . $skill['level'];
     ?>
-<body>
         <main class="section-container">
             <div class="container-xl">
                 <div class="row">

@@ -30,6 +30,7 @@
   font-weight: 500;
   font-style: normal;
   color:white;
+  white-space: nowrap;
 }
 .ysabeau-sc-NavBar:hover {
   color:#6b5b95
@@ -71,6 +72,12 @@
 .view-detail:hover {
   transform: translateY(-5px);
 }
+.ysabeau-sc-modal-button {
+    font-family: "Ysabeau SC", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: white;
+}
 .ysabeau-sc-orange-button {
   font-family: "Ysabeau SC", sans-serif;
   font-weight: 600;
@@ -85,12 +92,28 @@
   font-size: 20px;
   color: #cd4f07;
 }
+.index-alert {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
 .ysabeau-sc-detail-sub-heading {
   font-family: "Ysabeau SC", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
   color: #333333 ;
+}
+.ysabeau-sc-NavBar-user {
+  font-family: "Ysabeau SC", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color:#333333;
+  white-space: nowrap;
+}
+.ysabeau-sc-NavBar-user:hover {
+  color:#6b5b95
 }
 .ysabeau-sc-detail-sub-heading-details {
   font-family: "Ysabeau SC", sans-serif;
