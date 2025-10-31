@@ -21,7 +21,7 @@
             $query = "SELECT * FROM users WHERE user_id = $i";
             $result = mysqli_query($conn, $query);
             $row = mysqli_fetch_assoc($result);
-            echo"<a class='ysabeau-sc p-2' href='instructor.php?id=" . '"' . $row['user_id'] . '"' . "'>" . $row['username'] . "</a>";
+            echo"<a class='ysabeau-sc no-underline p-2' href='instructor.php?id=" . '"' . $row['user_id'] . '"' . "'>" . $row['username'] . "</a>";
         }
         ?>
         </div>
